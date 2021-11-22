@@ -1,5 +1,7 @@
 import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -13,6 +15,7 @@ public class BaseTest {
     MoodUpdatedModalPage moodUpdatedModalPage;
     MyDiaryPage myDiaryPage;
     RateYourHappinessModalPage rateYourHappinessModalPage;
+    UrgentPage urgentPage;
 
     @BeforeMethod
     public void init(){
@@ -25,10 +28,10 @@ public class BaseTest {
         moodUpdatedModalPage = new MoodUpdatedModalPage();
         myDiaryPage = new MyDiaryPage();
         rateYourHappinessModalPage = new RateYourHappinessModalPage();
+        urgentPage = new UrgentPage();
     }
 
     @AfterMethod
     public void quit(){
-
     }
 }

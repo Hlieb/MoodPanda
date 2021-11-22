@@ -8,6 +8,10 @@ public class RateYourHappinessModalPage {
 
     public static final String SLIDER_CSS = ".ui-slider-handle";
     public static final String UPDATE_MOOD_BUTTON = ".btn-primary.ButtonUpdate";
+    public static final String GO_TO_MY_DIARY_BUTTON = ".ButtonMyDiary";
+    public static final String MOOD_INPUT_FIELD = "#TextBoxUpdateMoodTag";
+
+
 
     public MoodUpdatedModalPage updateMood(int moodValue) {
         $(SLIDER_CSS).click();
@@ -25,5 +29,15 @@ public class RateYourHappinessModalPage {
         }
         $(UPDATE_MOOD_BUTTON).click();
         return new MoodUpdatedModalPage();
+    }
+
+    public MyDiaryPage clickGoToMyDiaryButton(){
+        $(GO_TO_MY_DIARY_BUTTON).click();
+        return  new MyDiaryPage();
+    }
+
+    public RateYourHappinessModalPage writeText(String text){
+        $(MOOD_INPUT_FIELD).sendKeys(text);
+        return this;
     }
 }
